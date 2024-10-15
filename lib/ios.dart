@@ -338,7 +338,7 @@ Future<void> changeIosLauncherIcon(String iconName, String? flavor) async {
       if (currentConfig != null &&
           (flavor == null || currentConfig.contains('-$flavor')) &&
           line.contains('ASSETCATALOG')) {
-        lines[x] = line.replaceAll(RegExp('\=(.*);'), '= $iconName;');
+        lines[x] = line.replaceAll(RegExp('\=(.*);'), '= \"$iconName\";');
       }
     }
   }
